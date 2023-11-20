@@ -1,0 +1,29 @@
+{
+  "name": "family-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/family-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/family-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "family:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "family:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/family-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["family"]
+}
