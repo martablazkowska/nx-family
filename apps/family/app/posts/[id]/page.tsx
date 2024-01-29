@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation';
 
+import { PostPageProps } from '../posts.types';
+
 const getData = async (id: string) => {
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
     cache: 'no-store',
@@ -13,7 +15,7 @@ const getData = async (id: string) => {
   return res.json();
 };
 
-const PostPage = async ({ params }) => {
+const PostPage = async ({ params }: PostPageProps) => {
   const data = await getData(params.id);
   return (
     <div>
