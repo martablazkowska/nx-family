@@ -1,26 +1,28 @@
 import { notFound } from 'next/navigation';
+import { createClient } from 'next-sanity';
 
 import { PostPageProps } from '../posts.types';
 
+const client = createClient({
+  projectId: process.env.SANITY_API_PROJECT_ID,
+  dataset: process.env.SANITY_API_DATASET,
+  apiVersion: '2022-03-25',
+  useCdn: false,
+});
+
 const getData = async (id: string) => {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
-    cache: 'no-store',
-    // next: { revalidate: 10 },
-  });
+  const receipt = await client.fetch(`*[_type == "receipt" && _id == "${id}"]`);
 
-  if (!res.ok) {
-    return notFound();
-  }
+  if (!receipt) notFound();
 
-  return res.json();
+  return receipt[0];
 };
 
 const PostPage = async ({ params }: PostPageProps) => {
   const data = await getData(params.id);
   return (
     <div>
-      <h2>{data.title}</h2>
-      <p>{data.body}</p>
+      <h2>{data.name}</h2>
     </div>
   );
 };

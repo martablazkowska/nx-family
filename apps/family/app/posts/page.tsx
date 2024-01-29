@@ -1,18 +1,19 @@
 import Link from 'next/link';
+import { createClient } from 'next-sanity';
 
 import { IPost } from './posts.types';
 
+const client = createClient({
+  projectId: process.env.SANITY_API_PROJECT_ID,
+  dataset: process.env.SANITY_API_DATASET,
+  apiVersion: '2022-03-25',
+  useCdn: false,
+});
+
 const getData = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
-    cache: 'no-store',
-    // next: { revalidate: 10 },
-  });
+  const receipts = await client.fetch(`*[_type == "receipt"]`);
 
-  if (!res.ok) {
-    throw new Error('Request error');
-  }
-
-  return res.json();
+  return receipts;
 };
 
 const PostsPage = async () => {
@@ -21,10 +22,10 @@ const PostsPage = async () => {
   return (
     <div>
       <ul>
-        {data.map(({ id, title }: IPost) => (
-          <li key={id} style={{ margin: '12px' }}>
-            <Link href={`/posts/${id}`}>
-              {id} -{title}
+        {data.map(({ _id, name }: IPost) => (
+          <li key={_id} style={{ margin: '12px' }}>
+            <Link href={`/posts/${_id}`}>
+              {_id} - {name}
             </Link>
           </li>
         ))}

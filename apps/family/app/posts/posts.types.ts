@@ -1,9 +1,10 @@
 export interface IPost {
-  id: string;
-  title: string;
-  body: string;
+  _id: string;
+  name: string;
 }
 
 export interface PostPageProps {
-  params: IPost;
+  params: {
+    id: string;
+  };
 }
