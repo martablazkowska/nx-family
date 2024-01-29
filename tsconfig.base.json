@@ -14,7 +14,23 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-family/feature-footer": ["libs/feature/footer/src/index.ts"],
+      "@nx-family/feature-footer-server": ["libs/feature/footer/src/server.ts"],
+      "@nx-family/feature-home": ["libs/feature/home/src/index.ts"],
+      "@nx-family/feature-home-server": ["libs/feature/home/src/server.ts"],
+      "@nx-family/feature-navbar": ["libs/feature/navbar/src/index.ts"],
+      "@nx-family/feature-navbar-server": ["libs/feature/navbar/src/server.ts"],
+      "@nx-family/feature-receipts": ["libs/feature/receipts/src/index.ts"],
+      "@nx-family/feature-receipts-server": [
+        "libs/feature/receipts/src/server.ts"
+      ],
+      "@nx-family/shared-theme": ["libs/shared/theme/src/index.ts"],
+      "@nx-family/shared-ui": ["libs/shared/ui/src/index.ts"],
+      "@nx-family/shared-ui-server": ["libs/shared/ui/src/server.ts"],
+      "@nx-family/shell": ["libs/shell/src/index.ts"],
+      "@nx-family/shell-server": ["libs/shell/src/server.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

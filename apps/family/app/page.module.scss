@@ -1,2 +1,27 @@
+@import 'libs/shared/theme/src/lib/variables';
+
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 220px);
+  gap: 40px;
+}
+
+.hero {
+  font-size: 80px;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  text-align: center;
+
+  .coloured {
+    color: var(--color-text-secondary);
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
 }

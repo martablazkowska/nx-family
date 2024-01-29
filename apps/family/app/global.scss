@@ -1,0 +1,37 @@
+@import 'libs/shared/theme/src/lib/variables';
+
+:root {
+  --color-black: #{$black};
+
+  --color-dim-grey: #{$dim-grey};
+  --color-dark-grey: #{$dark-grey};
+  --color-grey: #{$grey};
+  --color-light-grey: #{$light-grey};
+
+  --color-green: #{$green};
+}
+
+body,
+body[data-theme='dark'] {
+  --color-text-primary: var(--color-grey);
+  --color-text-secondary: var(--color-light-grey);
+  --color-bg-primary: var(--color-black);
+}
+
+body[data-theme='light'] {
+  --color-text-primary: var(--color-black);
+  --color-text-secondary: var(--color-dark-grey);
+  --color-bg-primary: var(--color-light-grey);
+}
+
+body {
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: sans-serif;
+  transition: background 0.25s ease-in-out;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}

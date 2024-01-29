@@ -1,0 +1,42 @@
+@import 'libs/shared/theme/src/lib/variables';
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+}
+
+.logo {
+  font-size: 24px;
+  color: var(--bs-gray-200);
+  font-weight: bold;
+  padding: 4px;
+
+  .colored {
+    color: $green;
+    font-size: 67px;
+    margin-right: -19px;
+  }
+
+  &:hover {
+    color: $green;
+    .colored {
+      color: var(--bs-gray-200);
+    }
+  }
+}
+
+.links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+
+  a {
+    &:hover {
+      color: var(--bs-gray-100);
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@import 'libs/shared/theme/src/lib/variables';
+
+.toggle {
+  width: 44px;
+  height: 24px;
+  padding: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid $green;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+
+  &.dark {
+    .dot {
+      left: 22px;
+    }
+  }
+
+  &.light {
+    .dot {
+      left: 2px;
+    }
+  }
+}
+
+.icon {
+  margin: 4px;
+  font-size: 14px;
+}
+
+.dot {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: $green;
+  border-radius: 50%;
+  transition: left 0.25s ease;
+}

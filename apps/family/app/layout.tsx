@@ -1,4 +1,12 @@
-import './global.css';
+import { FeatureNavbar } from '@nx-family/feature-navbar';
+import { FeatureFooter } from '@nx-family/feature-footer';
+import { ThemeProvider } from '@nx-family/shell';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'reset-css';
+import './global.scss';
+
+import styles from './layout.module.scss';
 
 export const metadata = {
   title: 'Welcome to family',
@@ -12,7 +20,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ThemeProvider>
+          <div className={styles.layout}>
+            <FeatureNavbar />
+            <div className={styles.container}>{children}</div>
+            <FeatureFooter />
+          </div>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

@@ -1,0 +1,17 @@
+@import 'libs/shared/theme/src/lib/variables';
+
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+.layout {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  min-height: calc(100vh - 160px);
+  padding: 24px;
+  margin: 0 auto;
+}

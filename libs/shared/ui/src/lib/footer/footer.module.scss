@@ -1,0 +1,13 @@
+@import 'libs/shared/theme/src/lib/variables';
+
+.footer {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  padding: 8px;
+
+  a {
+    color: $light-grey;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,23 @@
+.gallery {
+  display: grid;
+  gap: 24px;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  & > div {
+    position: relative;
+    height: 400px;
+
+    @media screen and (min-width: 768px) {
+      height: 300px;
+    }
+  }
+
+  img {
+    border-radius: 16px;
+    object-fit: cover;
+  }
+}

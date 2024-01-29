@@ -1,0 +1,13 @@
+@import 'libs/shared/theme/src/lib/variables';
+
+.title {
+  font-size: 40px;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  text-align: center;
+  margin-bottom: 24px;
+
+  .coloured {
+    color: var(--color-text-secondary);
+  }
+}
