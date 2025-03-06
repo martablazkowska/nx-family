@@ -9,6 +9,7 @@ const ReceiptsPage = () => {
       <h1 className={styles.title}>
         Katalog <span className={styles.coloured}>przepisów</span>
       </h1>
+      <h2>Przepisy na róne okazje</h2>
       <ReceiptsGallery />
     </div>
   );
